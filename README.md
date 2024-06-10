@@ -9,7 +9,7 @@ Confman, a simple configuration file manager
 - Eventually a custom scripting language.
 
 ### The overall workings.
-Confman has two modes, `command mode` which simply implies that you communication with it through commands and `tui mode`  which features a terminal graphical interface.
+Confman has two modes, `command mode` which simply implies that you communicating with it through commands and `tui mode`  which features a terminal graphical interface.
 #### Command list:
 - `set-config "application config path"` this will ask a few other questions for setting up confman. This command will return a string which will be the config_id for that app, that config_id will simply be the name that you'll give to the app.
 - `add-confv $config_id "new config path"` this will just add another version of configuration for that application.
