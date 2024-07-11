@@ -1,5 +1,20 @@
-# This is just an example to get you started. A typical binary package
-# uses this file as the main entry point of the application.
+import os
+import confman/frontend/cmdutils
 
-when isMainModule:
-  echo("Hello, World!")
+# let 
+#   arguments = commandLineParams()
+#
+# var
+#   runMode: string
+#
+# if ( len arguments ) >= 1:
+#   runMode = arguments[0]
+# else:
+#   runMode = "cli"
+#
+# if not (runMode == "tui"):
+#   discard
+# else:
+#   discard
+
+echo splitCommandParams("Hello \"ui op jfd jfd jkj\"")

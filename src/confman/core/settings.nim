@@ -1,12 +1,16 @@
 import Tables
 import io
-const settingsKeyList: seq[string] = [
-  "conf_id",
-  "configs: Table[string, string]",
-  "main_conf: string",
-]
+import parser
  # Settings will be for every single configured apps
  # configured apps can be diplayed through conf-list
 
-proc getSettings*(configId: string): Table[string, string] =
-  discard
+proc readSettings*(confId: string) : Table[ConfKinds, string] =
+  var 
+    confValues: (string, string)
+
+  try:
+    confValues = readConf(confId)
+    result = parseConf(confValues[1])
+  except IOError:
+    echo "Unable to read file: "
+    result = {Unknown: "Unknown token"}.toTable()

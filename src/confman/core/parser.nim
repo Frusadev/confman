@@ -5,6 +5,7 @@ type
   ConfKinds* = enum 
     CONF_ID
     CONFIGS
+    ORIGIN
     MAIN_CONF
     Unknown
 
@@ -26,7 +27,7 @@ proc extractList*(s: string) : seq[string] =
 
 proc parseConf*(raw: string) : Table[ConfKinds, string] =
   const 
-    confList: seq[string] = @["conf_id", "configs", "main_conf"]
+    confList: seq[string] = @["conf_id", "configs", "main_conf", "origin"]
     confTable: Table[string, ConfKinds] = {
       "conf_id": CONF_ID,
       "configs": CONFIGS,
